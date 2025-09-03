@@ -1,0 +1,125 @@
+* {
+    margin: 0;                /* Menghilangkan margin default semua elemen */
+    padding: 0;               /* Menghilangkan padding default semua elemen */
+    box-sizing: border-box;   /* Mengatur box-sizing agar padding dan border masuk ke dalam width/height */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font utama halaman */
+    background: linear-gradient(135deg, #000000 0%, #764ba2 100%); /* Latar belakang gradasi hitam ke ungu */
+    min-height: 100vh;        /* Tinggi minimal 100% viewport */
+    display: flex;            /* Menggunakan flexbox untuk layout */
+    justify-content: center;  /* Konten di tengah secara horizontal */
+    align-items: center;      /* Konten di tengah secara vertikal */
+    padding: 20px;            /* Padding di seluruh sisi body */
+}
+
+.container {
+    background: rgb(44, 38, 38); /* Latar belakang container warna gelap */
+    border-radius: 20px;         /* Sudut membulat 20px */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Bayangan container */
+    overflow: hidden;            /* Konten yang keluar akan disembunyikan */
+    width: 100%;                 /* Lebar penuh */
+    max-width: 800px;            /* Lebar maksimal 800px */
+}
+
+.header {
+    background: linear-gradient(135deg, #6108c6 0%, #baeb17 100%); /* Gradasi ungu ke hijau pada header */
+    padding: 40px;               /* Padding 40px di header */
+    text-align: center;          /* Teks rata tengah */
+    color: white;                /* Warna teks putih */
+}
+
+.profile-image {
+    width: 150px;                /* Lebar foto profil 150px */
+    height: 150px;               /* Tinggi foto profil 150px */
+    border-radius: 50%;          /* Membuat foto bulat */
+    border: 5px solid white;     /* Border putih tebal 5px */
+    margin: 0 auto 20px;         /* Tengah secara horizontal dan margin bawah 20px */
+    overflow: hidden;            /* Bagian gambar yang keluar akan disembunyikan */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan pada foto profil */
+}
+
+.profile-image img {
+    width: 100%;                 /* Gambar memenuhi container */
+    height: 100%;                /* Gambar memenuhi container */
+    object-fit: cover;           /* Gambar dipotong agar proporsional */
+}
+
+.header h1 {
+    font-size: 2.5em;            /* Ukuran font judul besar */
+    margin-bottom: 10px;         /* Jarak bawah 10px */
+    font-weight: 300;            /* Ketebalan font ringan */
+}
+
+.header p {
+    font-size: 1.2em;            /* Ukuran font deskripsi */
+    opacity: 0.9;                /* Transparansi teks */
+}
+
+.biodata-content {
+    padding: 40px;               /* Padding 40px pada konten biodata */
+}
+
+.info-grid {
+    display: grid;               /* Menggunakan grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Kolom otomatis minimal 300px */
+    gap: 25px;                   /* Jarak antar kolom 25px */
+    margin-bottom: 30px;         /* Margin bawah 30px */
+}
+
+.info-card {
+    background: #dedede;         /* Latar belakang card abu-abu muda */
+    padding: 25px;               /* Padding 25px pada card */
+    border-radius: 15px;         /* Sudut membulat 15px */
+    border-left: 4px solid #1d252c; /* Border kiri tebal 4px warna gelap */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi hover */
+}
+
+.info-card:hover {
+    transform: translateY(-5px); /* Card naik 5px saat hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Bayangan card saat hover */
+}
+
+.info-card h3 {
+    color: #5d00ff;              /* Warna judul card ungu */
+    margin-bottom: 15px;         /* Jarak bawah 15px */
+    font-size: 1.1em;            /* Ukuran font judul card */
+    text-transform: uppercase;   /* Huruf kapital semua */
+    letter-spacing: 1px;         /* Spasi antar huruf 1px */
+}
+
+.info-card p {
+    font-size: 1.2em;            /* Ukuran font isi card */
+    color: #333;                 /* Warna teks abu gelap */
+    font-weight: 500;            /* Ketebalan font medium */
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 30px 20px;      /* Padding header lebih kecil di tablet */
+    }
+    
+    .header h1 {
+        font-size: 2em;          /* Ukuran judul lebih kecil di tablet */
+    }
+    
+    .biodata-content {
+        padding: 30px 20px;      /* Padding konten lebih kecil di tablet */
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr; /* Satu kolom di tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image {
+        width: 120px;            /* Lebar foto profil lebih kecil di hp */
+        height: 120px;           /* Tinggi foto profil lebih kecil di hp */
+    }
+    
+    .header h1 {
+        font-size: 1.8em;        /* Ukuran judul lebih kecil di hp */
+    }
+}
